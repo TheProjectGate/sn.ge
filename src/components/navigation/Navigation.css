@@ -1,0 +1,114 @@
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav--container{
+    position: absolute;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 2rem;
+    background: linear-gradient(to right, rgb(0 0 0) 60%, rgba(24, 29, 25, 0.5) 100%);
+    align-items: center;
+    width: 100%;
+    height: clamp(80px, 10vh, 130px);
+    padding: 0 clamp(1rem, 5vw, 8rem);
+    transition: background-color 0.3s ease;
+}
+
+.nav--container.scrolled {
+    background-color: var(--sn-color-dark);
+}
+
+.logo{
+    background: url(../../assets/media/svg/logo.svg) no-repeat ;
+    width: 180px;
+    height: 60px;
+    background-size: contain;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.burger--menu{
+    display: none; /* Скрываем по умолчанию */
+    border: none;
+    cursor: pointer;
+    background: url(../../assets/media/svg/burger-icon.svg) no-repeat center center;
+    background-size: contain;
+    width: clamp(30px, 3vw, 35px);
+    height: clamp(25px, 2.5vw, 30px);
+}
+
+@media (max-width: 768px) {
+    .nav--container.scrolled{
+        background: #ffffff;
+    }
+
+    .logo{
+        background: url(../../assets/media/svg/logo-black.svg) no-repeat ;
+        width: 180px;
+        height: 60px;
+        background-size: contain;
+        margin: 0px 0px 0px 20px;
+    }
+    .burger--menu {
+        position: fixed; /* Фиксируем кнопку на экране */
+        top: 1.5rem; /* Отступ сверху */
+        width: 40px;
+        height: 34px;
+        right: clamp(1rem, 5vw, 8rem); /* Отступ справа, такой же как у контейнера */
+        z-index: 101; /* Устанавливаем z-index выше, чем у nav */
+        display: block; /* Показываем кнопку на мобильных */
+        background-image: url(../../assets/media/svg/burger-icon.svg); /* Меняем иконку на черную */
+    }
+    .nav--container {
+        padding-right: clamp(4rem, 10vw, 10rem);
+        background: none;
+         grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+    }
+    /* Скрываем десктопное меню на мобильных */
+    .desktop-menu-content {
+        display: none;
+    }
+}
+
+/* На больших экранах возвращаем стандартное поведение */
+@media (min-width: 768px) {
+    .desktop-menu-content {
+        display: contents; /* Ведет себя так, будто контейнера нет */
+    }
+    /* Скрываем мобильное меню на десктопе */
+    .mobile-menu-content {
+        display: none;
+    }
+}
+
+.top--menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.top--menu li{
+    display: block;
+    padding: 0 clamp(1rem, 2vw, 2rem);
+    font-size: clamp(16px, 1.5vw, 20px);
+}
+
+.contact--button a{
+    background: var(--sn-color-yelow);
+    border-radius: 50px;
+    padding: clamp(8px, 1vh, 10px) clamp(16px, 2vw, 20px);
+    color: var(--sn-color-dark);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+}
+.burger--menu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
