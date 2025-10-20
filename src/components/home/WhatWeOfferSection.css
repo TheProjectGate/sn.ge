@@ -1,0 +1,178 @@
+/*--------------------Section Third------------------*/
+.section--third{
+    display: flex;
+    width: 100%;    
+    background: linear-gradient(to top, #F2F2F2 0%, #F2F2F2 71%, #fff 65%, #fff 100%);
+
+}
+
+/*----------Section Third Body----------*/
+.sec--third-body{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/*----------Section Third Body----------*/
+.sec--third-body h1{
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    color: var(--sn-color-dark);
+    font-weight: 900;
+    font-size: 20vh;
+    padding: 2rem 0 40px 3rem;
+}
+
+/*----------Section Third Nav----------*/
+.sec--third-nav{
+    display: flex;
+    gap: 40px;
+}
+.sec--third-nav-idle{
+    display: block;
+    background: var(--sn-color-dark);
+    border-radius: 100px;
+    border: solid 1px var(--sn-color-dark);
+    padding: 4px 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--sn-color-white);
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.sec--third-nav-idle:hover{
+    background: var(--sn-color-yelow);
+    border: solid 1px var(--sn-color-dark);
+    color: var(--sn-color-dark);
+}
+.sec--third-nav-active{
+    background: var(--sn-color-white);
+    border: solid 1px var(--sn-color-dark);
+    color: var(--sn-color-dark);
+}
+
+/*----------Section Third Text----------*/
+.sec--third-text{
+    padding-top: 38px;
+    max-width: 700px;
+}
+.sec--third-text p{
+    font-family: 'Montserrat', sans-serif;
+    color: var(--sn-color-dark);
+    font-weight: 100;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/*----------Section Third Gallery Button----------*/
+.sec--third-button{
+    margin-top: 40px;
+    display: block;
+    background: var(--sn-color-yelow);
+    padding: 6px 100px;
+    border-radius: 100px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: var(--sn-color-dark);
+    transition: 0.3s;
+}
+.sec--third-button:hover{
+    background: var(--sn-color-dark);
+    color: var(--sn-color-white);
+}
+
+/*----------Section Third Image----------*/
+.sec--third-image{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+.sec--third-image img{
+    display: block;
+}
+
+@media (max-width: 1079px) {
+    .section--third {
+        flex-direction: column;
+    }
+    .sec--third-image img{
+        width: 100vw;
+    }
+    .sec--third-body {
+        margin-top: 1rem;
+    }
+    .sec--third-body h1 {
+        font-family: 'Bebas Neue', sans-serif;
+        text-transform: uppercase;
+        color: var(--sn-color-dark);
+        font-weight: 900;
+        font-size: 14vh;
+        text-align: center;
+        line-height: 0.9;
+        padding: 0.5em 0;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 1rem;
+    }
+
+    .sec--third-body h1::before,
+    .sec--third-body h1::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 99%;
+        height: 100%;
+        z-index: -1;
+        /* Добавляем плавный переход для clip-path и transform */
+        transition: clip-path 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .sec--third-body h1::before {
+        background-color: var(--sn-color-yelow);
+        clip-path: polygon(0 15%, 91% 0, 100% 84%, 9% 99%);
+        transform: rotate(-2deg);
+    }
+    /* Новая форма для ::before при прокрутке */
+    .sec--third-body.visible h1::before {
+        clip-path: polygon(0% 2%, 100% 21%, 83% 90%, 30% 100%);
+        transform: rotate(1deg);
+    }
+
+    .sec--third-body h1::after {
+        background-color: var(--sn-color-viol);
+        clip-path: polygon(4% 0%, 97% 38%, 95% 100%, 4% 81%);
+        transform: rotate(1deg);
+        transition-delay: 0.1s; /* Небольшая задержка для второго слоя */
+    }
+    /* Новая форма для ::after при прокрутке */
+    .sec--third-body.visible h1::after {
+        clip-path: polygon(5% 30%, 97% 0, 100% 68%, 1% 95%);
+        transform: rotate(-1deg);
+    }
+    .sec--third-nav {
+        display: flex;
+        gap:0px;
+    }
+    .sec--third-nav-left{
+        padding: 14px 10px;
+        border-radius: 10vw 0px 0px 10vw;
+    }
+    .sec--third-nav-right{
+        padding: 14px 10px;
+        border-radius: 0px 10vw 10vw 0px;
+    }
+    .sec--third-text p {
+        font-size: 1rem;
+        padding: 0.3rem 2rem;
+        line-height: 2;
+    }
+    .sec--third-text {
+        padding-top: 1rem;
+    }
+}

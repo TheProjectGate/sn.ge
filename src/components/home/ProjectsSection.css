@@ -1,0 +1,142 @@
+/*--------------------Section Fourth------------------*/
+.section--fourth{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 4rem 0;
+}
+
+/*----------Section Fourth Tittle----------*/
+.sec--fourth-tittle{
+    background: var(--sn-color-dark);
+}
+.sec--fourth-tittle h1{
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--sn-color-white);
+    font-weight: 900; 
+    font-size: 9vw;
+    /* Альтернативный способ убрать отступы */
+    margin-top: -0.1em; /* Сдвигаем текст вверх */
+    margin-bottom: -0.15em; /* Подтягиваем контент снизу */
+}
+
+/*----------Section Fourth Slider Canvas----------*/
+.sec--fourth-canvas{
+    width: 100%; /* Ограничиваем ширину контейнера */
+    overflow: hidden; /* Скрываем все, что выходит за его пределы, это важно для карусели */
+    position: relative;
+}
+
+/*---------- Swipe Hint Animation for Mobile ----------*/
+.swipe-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px; /* Увеличили ширину контейнера для SVG */
+    z-index: 10;
+    display: none; /* Скрыто по умолчанию на десктопе */
+    pointer-events: none; /* Иконка не должна мешать свайпу */
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    /* Анимация, имитирующая GSAP */
+    animation: swipe-animation 3s ease-in-out infinite;
+}
+
+/* Стили для SVG внутри подсказки */
+.swipe-hint svg {
+    fill: #ffffff;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 1.8));
+}
+
+/* Стили для текста "swipe" */
+.swipe-hint span {
+    color: white;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: -25px; /* Скорректировали положение под увеличенной рукой */
+    text-align: center;
+    width: 100%;
+    font-size: 16px; /* Немного увеличили шрифт */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes swipe-animation {
+    0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.1) translateX(0); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1) translateX(0); }
+    60% { opacity: 1; transform: translate(calc(-50% - 30px), -50%) scale(1) rotate(-15deg); } /* Движение влево и поворот */
+    80% { opacity: 0; transform: translate(calc(-50% - 30px), -50%) scale(1) rotate(-15deg); }
+}
+
+
+/*---------- Slider ----------*/
+.sec--fourth-slider{
+    display: flex;
+    margin-top: 92px;
+    position: relative;
+    align-items: center; /* Вертикальное выравнивание слайдов по центру */
+    transition: transform 0.5s ease-in-out; /* Добавляем плавный переход */
+}
+.sec--fourth-slider a{
+    margin: 0 2rem; /* Отступы между слайдами */
+    max-height: 538px;
+    flex-shrink: 0; /* Prevent images from shrinking */
+    display: flex; /* Для центрирования изображения внутри ссылки */
+    justify-content: center;
+    align-items: center;
+}
+.sec--fourth-slider a img {
+    max-height: 538px; /* Ограничиваем высоту изображения */
+    width: auto; /* Позволяем ширине изменяться пропорционально */
+}
+
+/*----------Section Fourth Slider Navigation----------*/
+.sec--fourth-nav{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+.sec--fourth-b{
+    background: var(--sn-color-lightGrey);
+    width:20px;
+    height: 20px;
+    border-radius: 100%;
+    transition: 0.3s;
+}
+.sec--fourth-b:hover{
+    background: var(--sn-color-grey);
+}
+.sec--fourth-active{
+    background: var(--sn-color-grey);
+}
+
+.sec--fourth-lb{
+    background: url(/media/icon/arow-slider.svg) no-repeat center center;
+    width: 2vw;
+    height: 2vw;
+}
+
+.sec--fourth-rb{
+    background: url(/media/icon/arow-slider.svg) no-repeat center center;
+    width: 2vw;
+    height: 2vw;
+    transform: rotate(-180deg)
+}
+
+@media (max-width: 768px) {
+    .sec--fourth-slider {
+        margin-top: 2rem;
+    }
+    .sec--fourth-tittle h1 {
+        font-size: 17vw;
+    }
+    .sec--fourth-nav{
+        display: none;
+    }
+    .swipe-hint {
+        display: block; /* Показываем подсказку на мобильных */
+    }
+}
