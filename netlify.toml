@@ -1,11 +1,8 @@
-# Файл конфигурации для Netlify
-
-# Настройки сборки (Netlify обычно определяет их сам, но лучше указать явно)
 [build]
-  command = "npm run build" # Команда для сборки вашего проекта
-  publish = "dist"          # Папка, которую нужно опубликовать
+  base = "web/sn-georgia-react"
+  command = "npm run build"
+  publish = "dist"
 
-# Правило для корректной работы роутинга в React (SPA)
 [[redirects]]
   from = "/*"
   to = "/index.html"
