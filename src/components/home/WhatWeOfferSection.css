@@ -126,34 +126,23 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 99%;
+        width: 100%;
         height: 100%;
         z-index: -1;
-        /* Добавляем плавный переход для clip-path и transform */
-        transition: clip-path 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .sec--third-body h1::before {
         background-color: var(--sn-color-yelow);
-        clip-path: polygon(0 15%, 91% 0, 100% 84%, 9% 99%);
-        transform: rotate(-2deg);
-    }
-    /* Новая форма для ::before при прокрутке */
-    .sec--third-body.visible h1::before {
-        clip-path: polygon(0% 2%, 100% 21%, 83% 90%, 30% 100%);
-        transform: rotate(1deg);
+        /* Начало: polygon(0 15%, 91% 0, 100% 84%, 9% 99%) -> Конец: polygon(0 2%, 100% 21%, 83% 90%, 30% 100%) */
+        clip-path: polygon(calc(0% + 0% * var(--scroll-progress)) calc(15% - 13% * var(--scroll-progress)), calc(91% + 9% * var(--scroll-progress)) calc(0% + 21% * var(--scroll-progress)), calc(100% - 4% * var(--scroll-progress)) calc(84% + 6% * var(--scroll-progress)), calc(9% + 21% * var(--scroll-progress)) calc(99% + 1% * var(--scroll-progress)));
+        transform: rotate(calc(-2deg + 3deg * var(--scroll-progress)));
     }
 
     .sec--third-body h1::after {
         background-color: var(--sn-color-viol);
-        clip-path: polygon(4% 0%, 97% 38%, 95% 100%, 4% 81%);
-        transform: rotate(1deg);
-        transition-delay: 0.1s; /* Небольшая задержка для второго слоя */
-    }
-    /* Новая форма для ::after при прокрутке */
-    .sec--third-body.visible h1::after {
-        clip-path: polygon(5% 30%, 97% 0, 100% 68%, 1% 95%);
-        transform: rotate(-1deg);
+        /* Начало: polygon(4% 0%, 97% 38%, 95% 100%, 4% 81%) -> Конец: polygon(5% 30%, 97% 0, 100% 68%, 1% 95%) */
+        clip-path: polygon(calc(10% + 1% * var(--scroll-progress)) calc(0% + 30% * var(--scroll-progress)), 97% calc(38% - 38% * var(--scroll-progress)), calc(95% + 5% * var(--scroll-progress)) calc(100% - 32% * var(--scroll-progress)), calc(4% - 3% * var(--scroll-progress)) calc(81% + 14% * var(--scroll-progress)));
+        transform: rotate(calc(1deg - 2deg * var(--scroll-progress)));
     }
     .sec--third-nav {
         display: flex;

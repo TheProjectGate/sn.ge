@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import './WhatWeOfferSection.css';
 import sectionImage3 from '../../assets/media/img/section-image/3.png';
-import { animateOnScroll } from '../../assets/anima/animation.js';
+import { animateOnScrollProgress } from '../../assets/anima/animation.js';
 
 function WhatWeOfferSection() {
   useEffect(() => {
     // Выбираем наш блок для анимации
     const selector = '.sec--third-body';
     // Вызываем вашу функцию анимации
-    const cleanup = animateOnScroll(selector);
+    const cleanup = animateOnScrollProgress(selector);
 
     // Возвращаем функцию для очистки, когда компонент исчезнет
     return () => cleanup();
