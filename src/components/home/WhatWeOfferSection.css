@@ -96,12 +96,13 @@
     display: block;
 }
 
-@media (max-width: 1079px) {
+@media (max-width: 768px) {
     .section--third {
         flex-direction: column;
     }
     .sec--third-image img{
         width: 100vw;
+        margin-bottom: -20px;
     }
     .sec--third-body {
         margin-top: 1rem;
@@ -129,12 +130,13 @@
         width: 98%;
         height: 100%;
         z-index: -1;
+        overflow: hidden;
     }
 
     .sec--third-body h1::before {
         background-color: var(--sn-color-yelow);
         /* Начало: polygon(0 15%, 91% 0, 100% 84%, 9% 99%) -> Конец: polygon(0 2%, 100% 21%, 83% 90%, 30% 100%) */
-        clip-path: polygon(calc(0% + 0% * var(--scroll-progress)) 
+        clip-path: polygon(calc(3% + 0% * var(--scroll-progress))
         calc(31% - 13% * var(--scroll-progress)), 
         calc(91% + 9% * var(--scroll-progress)) 
         calc(0% + 1% * var(--scroll-progress)), 
@@ -143,6 +145,7 @@
         calc(9% + 21% * var(--scroll-progress)) 
         calc(99% + 1% * var(--scroll-progress)));        
         transform: rotate(calc(-4deg + 3deg * var(--scroll-progress)));
+        overflow: hidden;
     }
 
     .sec--third-body h1::after {
@@ -150,6 +153,7 @@
         /* Начало: polygon(4% 0%, 97% 38%, 95% 100%, 4% 81%) -> Конец: polygon(5% 30%, 97% 0, 100% 68%, 1% 95%) */
         clip-path: polygon(calc(10% + 2% * var(--scroll-progress)) calc(0% + 30% * var(--scroll-progress)), 87% calc(38% - 38% * var(--scroll-progress)), calc(95% + 5% * var(--scroll-progress)) calc(100% - 32% * var(--scroll-progress)), calc(4% - 3% * var(--scroll-progress)) calc(81% + 14% * var(--scroll-progress)));
         transform: rotate(calc(1deg - 2deg * var(--scroll-progress)));
+        overflow: hidden;
     }
     .sec--third-nav {
         display: flex;

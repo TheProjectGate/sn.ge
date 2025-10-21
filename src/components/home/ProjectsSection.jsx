@@ -29,7 +29,7 @@ function ProjectsSection() {
 
   return (
     <section className="section--fourth">
-      <span className="sec--fourth-tittle"><h1>OOH creative best projects</h1></span>
+      <span className="sec--fourth-tittle"><h1>on creative best projects</h1></span>
       <div className="sec--fourth-canvas">
         {/* Подсказка будет отображаться только если пользователь еще не взаимодействовал со слайдером */}
         {!hasInteracted && (

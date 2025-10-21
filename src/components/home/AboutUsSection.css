@@ -49,7 +49,8 @@
 .sec--one-image img{
     display: block;
     width: 100%;
-    height: auto;
+    min-height: 450px;
+    background-size: cover;
 }
 
 
@@ -69,7 +70,7 @@
     background-color: var(--sn-color-dark);
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    font-size: clamp(25px, 1.5vw, 20px);
+    font-size: 1.4vw;
     border-radius: 50px;
     border: 1px solid var(--sn-color-dark);
     padding: 5px 10px;
@@ -91,7 +92,7 @@
     color: #000000;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 3rem 1rem;
 }
 .sec--one-bodyText h1{
     font-family: 'Bebas Neue', sans-serif;
@@ -113,8 +114,8 @@
     font-family: 'Montserrat', sans-serif;
     color: var(--sn-color-dark);
     font-weight: 400;
-    font-size: clamp(16px, 1.8vw, 20px);
-    line-height: 1.8;
+    font-size: 1vw;
+    line-height: 1.4;
 }
 
 @media (max-width: 768px) {
@@ -167,5 +168,11 @@
 
     .sec--one-bodyText h2{
         padding-bottom: 10px;
+    }
+    .topButton--list {
+        font-size: 5.4vw;
+    }
+    .sec--one-bodyText p {
+        font-size: 4vw;
     }
 }
