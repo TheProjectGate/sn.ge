@@ -1,10 +1,11 @@
-import React, { useRef, useEffect, useState, useCallback, JSX } from 'react';
+import React, { JSX } from 'react';
 import './ProjectsSection.css';
 import projectImg1 from '../../assets/media/img/canvas-gallery/1.png';
 import projectImg2 from '../../assets/media/img/canvas-gallery/2.png';
 import projectImg3 from '../../assets/media/img/canvas-gallery/3.png';
+import { useProjectSlider } from '../../assets/scripts/slider-animation';
 
-interface Slide {
+export interface Slide {
   src: string;
   alt: string;
 }
@@ -14,39 +15,6 @@ const slides: Slide[] = [
   { src: projectImg2, alt: "Park Home Billboard" },
   { src: projectImg3, alt: "Kaltenberg Beer Billboard" }
 ];
-
-function useProjectSlider(slides: Slide[]) {
-  // Your useProjectSlider hook logic here
-  // This is a placeholder, assuming the logic is in slider-animation.jsx
-  // For a full conversion, this hook should also be in a .ts or .tsx file
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [offset, setOffset] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const slideRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-  const extendedSlides = [...slides, ...slides, ...slides];
-  const goToPrevious = (e: React.MouseEvent) => { e.preventDefault(); setCurrentIndex(i => i - 1); };
-  const goToNext = (e: React.MouseEvent) => { e.preventDefault(); setCurrentIndex(i => i + 1); };
-  const goToSlide = (e: React.MouseEvent, slideIndex: number) => { e.preventDefault(); setCurrentIndex(slideIndex); };
-  const [dragOffset, setDragOffset] = useState(0);
-  const [hasInteracted, setHasInteracted] = useState(false);
-
-  return {
-    currentIndex,
-    offset,
-    imagesLoaded,
-    isTransitioning,
-    sliderRef,
-    slideRefs,
-    extendedSlides,
-    goToPrevious,
-    goToNext,
-    goToSlide,
-    dragOffset,
-    hasInteracted,
-  };
-}
 
 function ProjectsSection(): JSX.Element {
   const {
@@ -116,7 +84,7 @@ function ProjectsSection(): JSX.Element {
           }}
         >
           {extendedSlides.map((slide, index) => (
-            <a href="" key={index} ref={el => slideRefs.current[index] = el}><img src={slide.src} alt={slide.alt} /></a>
+            <a href="" key={index} ref={el => { slideRefs.current[index] = el; }}><img src={slide.src} alt={slide.alt} /></a>
           ))}
         </div>
         <div className="sec--fourth-nav">
