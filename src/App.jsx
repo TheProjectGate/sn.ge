@@ -55,7 +55,7 @@ function App() {
         <section id="media">
           <ProjectsSection />
         </section>
-        <section>
+        <section id="clients">
           <ClientsSection />
         </section>
         <section id="contact">

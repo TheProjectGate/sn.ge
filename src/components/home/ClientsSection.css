@@ -86,3 +86,27 @@
     font-weight: 900;
     font-size: 35px;
 }
+
+@media (max-width: 768px) {
+    .sec--fifth-tittle{
+        display: flex;
+    }
+    .sec--fifth-canvas img{
+       width: 80px;
+       height: auto;
+    }
+    .sec--fifth-canvas{
+        display: flex;
+    }
+    .sec--fifth-lb, .sec--fifth-rb{
+        display: none;
+    }
+    .sec--fifth-tittle {
+        padding-bottom: 1rem;
+        margin-top: 3rem;
+    }
+    .sec--fifth-canvas {
+        padding-bottom: 3rem;
+    }
+
+}
