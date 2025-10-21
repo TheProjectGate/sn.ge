@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, JSX } from 'react';
 import './WhatWeDoSection.css';
 import navIconArrow from '../../assets/media/icon/arow.svg';
 import sectionImage2 from '../../assets/media/img/section-image/2.png';
 
-function WhatWeDoSection() {
+function WhatWeDoSection(): JSX.Element {
   const categories = [
     'inflatable ads',
     '3d billboards',
@@ -15,7 +15,7 @@ function WhatWeDoSection() {
 
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
-  const handleCategoryClick = (e, category) => {
+  const handleCategoryClick = (e: React.MouseEvent<HTMLAnchorElement>, category: string) => {
     e.preventDefault();
     setActiveCategory(category);
   };

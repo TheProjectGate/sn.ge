@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './AboutUsSection.css';
 import sectionImage1 from '../../assets/media/img/section-image/1.png';
 import { animateOnScroll, animateButtons } from '../../assets/anima/animation.js';

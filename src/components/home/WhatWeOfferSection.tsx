@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, JSX } from 'react';
 import './WhatWeOfferSection.css';
 import sectionImage3 from '../../assets/media/img/section-image/3.png';
 import { animateOnScrollProgress } from '../../assets/anima/animation.js';
 
-function WhatWeOfferSection() {
+function WhatWeOfferSection(): JSX.Element {
   useEffect(() => {
     // Выбираем наш блок для анимации
     const selector = '.sec--third-body';

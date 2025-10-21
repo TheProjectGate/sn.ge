@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import './ClientsSection.css';
 import mcdonaldsLogo from '../../assets/media/img/canvas-clients-logo/McDonald\'s.png';
 import cocacolaLogo from '../../assets/media/img/canvas-clients-logo/coca-cola.png';
@@ -9,7 +9,7 @@ import lisiLogo from '../../assets/media/img/canvas-clients-logo/lisi.png';
 import symetriLogo from '../../assets/media/img/canvas-clients-logo/symetri.png';
 
 
-function ClientsSection() {
+function ClientsSection(): JSX.Element {
   return (
     <section className="section--fifth">
       <span className="sec--fifth-tittle"><h1>OUR CLIENTS</h1></span>

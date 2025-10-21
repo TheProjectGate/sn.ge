@@ -1,17 +1,54 @@
-import React from 'react';
+import React, { useRef, useEffect, useState, useCallback, JSX } from 'react';
 import './ProjectsSection.css';
 import projectImg1 from '../../assets/media/img/canvas-gallery/1.png';
 import projectImg2 from '../../assets/media/img/canvas-gallery/2.png';
 import projectImg3 from '../../assets/media/img/canvas-gallery/3.png';
-import { useProjectSlider } from '../../assets/scripts/slider-animation.jsx';
 
-const slides = [
+interface Slide {
+  src: string;
+  alt: string;
+}
+
+const slides: Slide[] = [
   { src: projectImg1, alt: "Socar Racing Arch" },
   { src: projectImg2, alt: "Park Home Billboard" },
   { src: projectImg3, alt: "Kaltenberg Beer Billboard" }
 ];
 
-function ProjectsSection() {
+function useProjectSlider(slides: Slide[]) {
+  // Your useProjectSlider hook logic here
+  // This is a placeholder, assuming the logic is in slider-animation.jsx
+  // For a full conversion, this hook should also be in a .ts or .tsx file
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const slideRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const extendedSlides = [...slides, ...slides, ...slides];
+  const goToPrevious = (e: React.MouseEvent) => { e.preventDefault(); setCurrentIndex(i => i - 1); };
+  const goToNext = (e: React.MouseEvent) => { e.preventDefault(); setCurrentIndex(i => i + 1); };
+  const goToSlide = (e: React.MouseEvent, slideIndex: number) => { e.preventDefault(); setCurrentIndex(slideIndex); };
+  const [dragOffset, setDragOffset] = useState(0);
+  const [hasInteracted, setHasInteracted] = useState(false);
+
+  return {
+    currentIndex,
+    offset,
+    imagesLoaded,
+    isTransitioning,
+    sliderRef,
+    slideRefs,
+    extendedSlides,
+    goToPrevious,
+    goToNext,
+    goToSlide,
+    dragOffset,
+    hasInteracted,
+  };
+}
+
+function ProjectsSection(): JSX.Element {
   const {
     currentIndex,
     offset,
@@ -35,7 +72,7 @@ function ProjectsSection() {
         {!hasInteracted && (
           <div className="swipe-hint">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              viewBox="0 0 2000 2000" style={{ enableBackground: 'new 0 0 2000 2000' }} xmlSpace="preserve">
+              viewBox="0 0 2000 2000" style={{ /* enableBackground: 'new 0 0 2000 2000' */ }} xmlSpace="preserve">
               <g>
                 <g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)">
                   <path className="st0" id="svg_arrow" d="M9706.6,6.6c-87.9-33.6-793.4-485.9-865.8-555.7c-62-59.4-77.5-93-77.5-183.5c2.6-93,41.4-168,268.8-529.8

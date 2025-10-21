@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import './ContactSection.css';
 import sectionImage4 from '../../assets/media/img/section-image/4.png';
 
-function ContactSection() {
+function ContactSection(): JSX.Element {
   return (
     <section className="section--sixth">
       <div className="sec--sixth-body">
