@@ -19,7 +19,7 @@ function Header() {
     <header>
       <div className="slider--container">
         {/* Используем импортированную переменную в src */}
-        <video src={headerVideo} type="video/mp4" autoPlay loop muted></video>
+        <video src={headerVideo} type="video/mp4" autoPlay loop muted playsInline></video>
         <div className="slider--text">
           <span className="header-text-1"><h1>just <u>imagine…</u></h1></span>
           <h1 className="header-text-2">and we’ll go<br />further.</h1>

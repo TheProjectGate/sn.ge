@@ -22,10 +22,14 @@
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
     "@vitejs/plugin-react-swc": "^3.7.0",
+    "envify": "^4.1.0",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
-    "typescript": "^5.9.3"
+    "terser": "^5.44.0",
+    "terser-brunch": "^4.1.0",
+    "typescript": "^5.9.3",
+    "uglifyify": "^5.0.2"
   }
 }
