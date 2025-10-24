@@ -1,5 +1,5 @@
 import React, { useEffect, JSX } from 'react';
-import '../../assets/styles/WhatWeOfferSection.css';
+import '../../assets/styles/WhatWeOfferSection.scss';
 import sectionImage3 from '../../assets/media/img/section-image/3.png';
 import { animateOnScrollProgress } from '../../assets/anima/animation.js';
 

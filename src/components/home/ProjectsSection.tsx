@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import '../../assets/styles/ProjectsSection.css';
+import '../../assets/styles/ProjectsSection.scss';
 import projectImg1 from '../../assets/media/img/canvas-gallery/1.png';
 import projectImg2 from '../../assets/media/img/canvas-gallery/2.png';
 import projectImg3 from '../../assets/media/img/canvas-gallery/3.png';

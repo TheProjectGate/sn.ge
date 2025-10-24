@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../assets/styles/Navigation.css';
+import '../../assets/styles/Navigation.scss';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 
 // Компонент будет получать isScrolled как "пропс" (свойство) от App.jsx

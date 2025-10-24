@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import '../../assets/styles/AboutUsSection.css';
+import '../../assets/styles/AboutUsSection.scss';
 import sectionImage1 from '../../assets/media/img/section-image/1.png';
 import { animateOnScroll, animateButtons } from '../../assets/anima/animation.js';
 

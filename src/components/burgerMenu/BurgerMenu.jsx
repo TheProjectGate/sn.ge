@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/styles/BurgerMenu.css';
+import '../../assets/styles/BurgerMenu.scss';
 import facebookIcon from '../../assets/media/icon/facebook.svg';
 import instagramIcon from '../../assets/media/icon/instagram.svg';
 import youtubeIcon from '../../assets/media/icon/youtube.svg';

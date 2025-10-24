@@ -1,5 +1,5 @@
 import React, { useState, JSX } from 'react';
-import '../../assets/styles/WhatWeDoSection.css';
+import '../../assets/styles/WhatWeDoSection.scss';
 import navIconArrow from '../../assets/media/icon/arow.svg';
 import sectionImage2 from '../../assets/media/img/section-image/2.png';
 
