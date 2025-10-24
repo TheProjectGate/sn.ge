@@ -2,7 +2,7 @@
 .section--third {
     display: flex;
     width: 100%;
-    background: linear-gradient(to top, #F2F2F2 0%, #F2F2F2 71%, #fff 65%, #fff 100%);
+    background: var(--sn-color-white);
 
     /*----------Section Third Body----------*/
     .sec--third-body {
