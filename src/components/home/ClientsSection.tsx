@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import './ClientsSection.css';
+import '../../assets/styles/ClientsSection.css';
 import mcdonaldsLogo from '../../assets/media/img/canvas-clients-logo/McDonald\'s.png';
 import cocacolaLogo from '../../assets/media/img/canvas-clients-logo/coca-cola.png';
 import jyskLogo from '../../assets/media/img/canvas-clients-logo/jysk.png';

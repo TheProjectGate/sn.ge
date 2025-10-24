@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './Header.css';
+import '../../assets/styles/Header.css';
 // Импортируем видео, чтобы Vite мог его обработать
 import headerVideo from '../../assets/media/video/1.mp4';
 

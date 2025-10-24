@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import './ContactSection.css';
+import '../../assets/styles/ContactSection.css';
 import sectionImage4 from '../../assets/media/img/section-image/4.png';
 
 function ContactSection(): JSX.Element {
