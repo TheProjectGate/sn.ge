@@ -19,8 +19,8 @@ function WhatWeOfferSection(): JSX.Element {
       <div className="sec--third-body">
         <h1>WHAT WE OFFER</h1>
         <div className="sec--third-nav">
-          <a className="sec--third-nav-left sec--third-nav-idle sec--third-nav-active" href="">design service</a>
-          <a className="sec--third-nav-right sec--third-nav-idle" href="">consulting service</a>
+          <a className="sec--third-nav-left sec--third-nav-idle sec--third-nav-active" href="#">design service</a>
+          <a className="sec--third-nav-right sec--third-nav-idle" href="#">consulting service</a>
         </div>
         <div className="sec--third-text">
           <p>If you already have a design concept,
@@ -35,7 +35,7 @@ function WhatWeOfferSection(): JSX.Element {
              ensuring that every detail contributes to stronger impact and better results.
           </p>
         </div>
-        <a className="sec--third-button" href="">gallery</a>
+        <a className="sec--third-button" href="#">gallery</a>
       </div>
       <div className="sec--third-image"><img src={sectionImage3} alt="Big Sams Burger Billboard" /></div>
     </section>

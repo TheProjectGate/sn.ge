@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { JSX, useState } from 'react';
 import '../../assets/styles/Navigation.scss';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 
+interface NavigationProps {
+  isScrolled: boolean;
+}
+
 // Компонент будет получать isScrolled как "пропс" (свойство) от App.jsx
-function Navigation({ isScrolled }) {
+function Navigation({ isScrolled }: NavigationProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

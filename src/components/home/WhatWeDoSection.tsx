@@ -15,8 +15,7 @@ function WhatWeDoSection(): JSX.Element {
 
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
-  const handleCategoryClick = (e: React.MouseEvent<HTMLAnchorElement>, category: string) => {
-    e.preventDefault();
+  const handleCategoryClick = (category: string) => {
     setActiveCategory(category);
   };
 
@@ -29,9 +28,9 @@ function WhatWeDoSection(): JSX.Element {
           {categories.map((category) => (
             <li key={category} className={activeCategory === category ? 'active' : ''}>
               {activeCategory === category && <img className="active" src={navIconArrow} alt="" />}
-              <a href="#" onClick={(e) => handleCategoryClick(e, category)}>
+              <button type="button" onClick={() => handleCategoryClick(category)}>
                 {category}
-              </a>
+              </button>
             </li>
           ))}
         </ul>

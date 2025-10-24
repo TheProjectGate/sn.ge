@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import '../../assets/styles/Footer.scss';
 import facebookIcon from '../../assets/media/icon/facebook.svg';
 import instagramIcon from '../../assets/media/icon/instagram.svg';
@@ -6,7 +6,7 @@ import youtubeIcon from '../../assets/media/icon/youtube.svg';
 import logoBottom from '../../assets/media/svg/logo.svg';
 
 
-function Footer() {
+function Footer(): JSX.Element {
   return (
     <footer>
       <div className="footer--container">

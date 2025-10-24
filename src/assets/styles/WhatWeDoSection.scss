@@ -60,7 +60,11 @@
         justify-content: center;
         height: 100%;
 
-        a {
+        button { /* Изменено с 'a' на 'button' */
+            border: none; /* Удаляем стандартную рамку кнопки */
+            background: none; /* Удаляем стандартный фон кнопки */
+            cursor: pointer; /* Указываем, что элемент интерактивный */
+            /* Остальные стили перенесены из селектора 'a' */
             display: block;
             font-family: 'Bebas Neue', sans-serif;
             text-transform: uppercase;
@@ -75,18 +79,18 @@
             &:hover {
                 color: var(--sn-color-white);
                 background-color: var(--sn-color-dark);
-                transition: 0.2s;
+                transition: 0.2s; /* Сохраняем переход для эффекта наведения */
             }
         }
 
         li {
             width: 98%;
             display: flex;
-            align-items: center;
+            align-items: center; /* Сохраняем выравнивание */
             flex-direction: row-reverse;
             align-items: center;
 
-            &.active a {
+            &.active button { /* Изменено с 'a' на 'button' */
                 color: var(--sn-color-white);
                 background-color: var(--sn-color-dark);
                 transition: 0.2s;
@@ -136,7 +140,9 @@
             justify-content: center;
             height: 100%;
 
-            a {
+            button { /* Изменено с 'a' на 'button' */
+                cursor: pointer; /* Указываем, что элемент интерактивный */
+                /* Остальные стили перенесены из селектора 'a' */
                 display: flex;
                 text-transform: uppercase;
                 font-weight: 500;
@@ -155,7 +161,7 @@
                 display: flex;
                 justify-content: center;
 
-                &.active a {
+                &.active button { /* Изменено с 'a' на 'button' */
                     color: var(--sn-color-white);
                     background-color: var(--sn-color-dark);
                     border-radius: 50rem;

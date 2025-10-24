@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import '../../assets/styles/BurgerMenu.scss';
 import facebookIcon from '../../assets/media/icon/facebook.svg';
 import instagramIcon from '../../assets/media/icon/instagram.svg';
 import youtubeIcon from '../../assets/media/icon/youtube.svg';
 
-function BurgerMenu({ isOpen, toggleMenu }) {
+interface BurgerMenuProps {
+  isOpen: boolean;
+  toggleMenu: () => void;
+}
+
+function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps): JSX.Element {
   return (
     <div className={`mobile-menu-content ${isOpen ? 'open' : ''}`}>
       <div className="mobile-logo"><a href="/" aria-label="SN Georgia Home"></a></div>
