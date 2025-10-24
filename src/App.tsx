@@ -3,12 +3,12 @@ import Navigation from './components/navigation/Navigation';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
-import AboutUsSection from './components/home/AboutUsSection';
-import WhatWeDoSection from './components/home/WhatWeDoSection';
-import WhatWeOfferSection from './components/home/WhatWeOfferSection';
-import ProjectsSection from './components/home/ProjectsSection';
-import ClientsSection from './components/home/ClientsSection';
-import ContactSection from './components/home/ContactSection';
+import AboutUsSection from './components/section/AboutUsSection';
+import WhatWeDoSection from './components/section/WhatWeDoSection';
+import WhatWeOfferSection from './components/section/WhatWeOfferSection';
+import ProjectsSection from './components/section/ProjectsSection';
+import ClientsSection from './components/section/ClientsSection';
+import ContactSection from './components/section/ContactSection';
 
 
 function App(): JSX.Element {
