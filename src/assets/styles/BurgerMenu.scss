@@ -15,37 +15,38 @@
     justify-content: flex-start; /* Контент начинается сверху */
     box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
     padding-bottom: 4rem;
-}
 
-.mobile-menu-content.open {
-    left: 0; /* Показываем меню */
-}
+    &.open {
+        left: 0; /* Показываем меню */
+    }
 
-.mobile-logo {
-    background: url(../../assets/media/svg/logo.svg) no-repeat ;
-    width: 180px; /* Такая же ширина, как у .logo */
-    height: 60px; /* Такая же высота, как у .logo */
-    background-size: contain;
-    margin-top: 17px;
-    margin-bottom: 5rem;
-    margin-left: 5px;
-}
+    .mobile-logo {
+        background: url(../../assets/media/svg/logo.svg) no-repeat;
+        width: 180px; /* Такая же ширина, как у .logo */
+        height: 60px; /* Такая же высота, как у .logo */
+        background-size: contain;
+        margin-top: 17px;
+        margin-bottom: 5rem;
+        margin-left: 5px;
+    }
 
-.mobile-menu-content .social--links {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: auto; /* Прижимает блок к низу */
-    justify-content: center;
-    width: 100%;
-}
+    .social--links {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: auto; /* Прижимает блок к низу */
+        justify-content: center;
+        width: 100%;
 
-.mobile-menu-content .social--links img {
-    width: 30px;
-    height: 30px;
-}
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
 
-.mobile-menu-content .top--menu, .mobile-menu-content .contact--button {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    .top--menu,
+    .contact--button {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
 }

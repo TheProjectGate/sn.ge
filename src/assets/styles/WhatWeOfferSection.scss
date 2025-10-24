@@ -1,178 +1,180 @@
 /*--------------------Section Third------------------*/
-.section--third{
+.section--third {
     display: flex;
-    width: 100%;    
+    width: 100%;
     background: linear-gradient(to top, #F2F2F2 0%, #F2F2F2 71%, #fff 65%, #fff 100%);
 
-}
-
-/*----------Section Third Body----------*/
-.sec--third-body{
-    display: flex;
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/*----------Section Third Body----------*/
-.sec--third-body h1{
-    font-family: 'Bebas Neue', sans-serif;
-    text-transform: uppercase;
-    color: var(--sn-color-dark);
-    font-weight: 900;
-    font-size: 20vh;
-    padding: 2rem 0 40px 3rem;
-}
-
-/*----------Section Third Nav----------*/
-.sec--third-nav{
-    display: flex;
-    gap: 40px;
-}
-.sec--third-nav-idle{
-    display: block;
-    background: var(--sn-color-dark);
-    border-radius: 100px;
-    border: solid 1px var(--sn-color-dark);
-    padding: 4px 8px;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--sn-color-white);
-    font-weight: 400;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-.sec--third-nav-idle:hover{
-    background: var(--sn-color-yelow);
-    border: solid 1px var(--sn-color-dark);
-    color: var(--sn-color-dark);
-}
-.sec--third-nav-active{
-    background: var(--sn-color-white);
-    border: solid 1px var(--sn-color-dark);
-    color: var(--sn-color-dark);
-}
-
-/*----------Section Third Text----------*/
-.sec--third-text{
-    padding-top: 38px;
-    max-width: 700px;
-}
-.sec--third-text p{
-    font-family: 'Montserrat', sans-serif;
-    color: var(--sn-color-dark);
-    font-weight: 100;
-    font-size: 24px;
-    text-align: center;
-    line-height: 1.6;
-}
-
-/*----------Section Third Gallery Button----------*/
-.sec--third-button{
-    margin-top: 40px;
-    display: block;
-    background: var(--sn-color-yelow);
-    padding: 6px 100px;
-    border-radius: 100px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-size: 24px;
-    color: var(--sn-color-dark);
-    transition: 0.3s;
-}
-.sec--third-button:hover{
-    background: var(--sn-color-dark);
-    color: var(--sn-color-white);
-}
-
-/*----------Section Third Image----------*/
-.sec--third-image{
-    display: flex;
-    width: 100%;
-    height: auto;
-}
-.sec--third-image img{
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .section--third {
-        flex-direction: column;
-    }
-    .sec--third-image img{
-        width: 100vw;
-        margin-bottom: -20px;
-    }
+    /*----------Section Third Body----------*/
     .sec--third-body {
-        margin-top: 1rem;
-    }
-    .sec--third-body h1 {
-        font-family: 'Bebas Neue', sans-serif;
-        text-transform: uppercase;
-        color: var(--sn-color-dark);
-        font-weight: 900;
-        font-size: 14vh;
-        text-align: center;
-        line-height: 0.9;
-        padding: 0.5em 0;
-        position: relative;
-        z-index: 1;
-        margin-bottom: 1rem;
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            color: var(--sn-color-dark);
+            font-weight: 900;
+            font-size: 20vh;
+            padding: 2rem 0 40px 3rem;
+        }
     }
 
-    .sec--third-body h1::before,
-    .sec--third-body h1::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 98%;
-        height: 100%;
-        z-index: -1;
-        overflow: hidden;
-    }
-
-    .sec--third-body h1::before {
-        background-color: var(--sn-color-yelow);
-        /* Начало: polygon(0 15%, 91% 0, 100% 84%, 9% 99%) -> Конец: polygon(0 2%, 100% 21%, 83% 90%, 30% 100%) */
-        clip-path: polygon(calc(3% + 0% * var(--scroll-progress))
-        calc(31% - 13% * var(--scroll-progress)), 
-        calc(91% + 9% * var(--scroll-progress)) 
-        calc(0% + 1% * var(--scroll-progress)), 
-        calc(100% - 4% * var(--scroll-progress)) 
-        calc(84% + 6% * var(--scroll-progress)), 
-        calc(9% + 21% * var(--scroll-progress)) 
-        calc(99% + 1% * var(--scroll-progress)));        
-        transform: rotate(calc(-4deg + 3deg * var(--scroll-progress)));
-        overflow: hidden;
-    }
-
-    .sec--third-body h1::after {
-        background-color: var(--sn-color-viol);
-        /* Начало: polygon(4% 0%, 97% 38%, 95% 100%, 4% 81%) -> Конец: polygon(5% 30%, 97% 0, 100% 68%, 1% 95%) */
-        clip-path: polygon(calc(10% + 2% * var(--scroll-progress)) calc(0% + 30% * var(--scroll-progress)), 87% calc(38% - 38% * var(--scroll-progress)), calc(95% + 5% * var(--scroll-progress)) calc(100% - 32% * var(--scroll-progress)), calc(4% - 3% * var(--scroll-progress)) calc(81% + 14% * var(--scroll-progress)));
-        transform: rotate(calc(1deg - 2deg * var(--scroll-progress)));
-        overflow: hidden;
-    }
+    /*----------Section Third Nav----------*/
     .sec--third-nav {
         display: flex;
-        gap:0px;
+        gap: 40px;
     }
-    .sec--third-nav-left{
-        padding: 14px 10px;
-        border-radius: 10vw 0px 0px 10vw;
+
+    .sec--third-nav-idle {
+        display: block;
+        background: var(--sn-color-dark);
+        border-radius: 100px;
+        border: solid 1px var(--sn-color-dark);
+        padding: 4px 8px;
+        font-family: 'Montserrat', sans-serif;
+        color: var(--sn-color-white);
+        font-weight: 400;
+        text-transform: uppercase;
+        transition: 0.3s;
+
+        &:hover {
+            background: var(--sn-color-yelow);
+            border: solid 1px var(--sn-color-dark);
+            color: var(--sn-color-dark);
+        }
     }
-    .sec--third-nav-right{
-        padding: 14px 10px;
-        border-radius: 0px 10vw 10vw 0px;
+
+    .sec--third-nav-active {
+        background: var(--sn-color-white);
+        border: solid 1px var(--sn-color-dark);
+        color: var(--sn-color-dark);
     }
-    .sec--third-text p {
-        font-size: 1rem;
-        padding: 0.3rem 2rem;
-        line-height: 2;
-    }
+
+    /*----------Section Third Text----------*/
     .sec--third-text {
-        padding-top: 1rem;
+        padding-top: 38px;
+        max-width: 700px;
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--sn-color-dark);
+            font-weight: 100;
+            font-size: 24px;
+            text-align: center;
+            line-height: 1.6;
+        }
+    }
+
+    /*----------Section Third Gallery Button----------*/
+    .sec--third-button {
+        margin-top: 40px;
+        display: block;
+        background: var(--sn-color-yelow);
+        padding: 6px 100px;
+        border-radius: 100px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 24px;
+        color: var(--sn-color-dark);
+        transition: 0.3s;
+
+        &:hover {
+            background: var(--sn-color-dark);
+            color: var(--sn-color-white);
+        }
+    }
+
+    /*----------Section Third Image----------*/
+    .sec--third-image {
+        display: flex;
+        width: 100%;
+        height: auto;
+
+        img {
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        .sec--third-image img {
+            width: 100vw;
+            margin-bottom: -20px;
+        }
+
+        .sec--third-body {
+            margin-top: 1rem;
+
+            h1 {
+                font-family: 'Bebas Neue', sans-serif;
+                text-transform: uppercase;
+                color: var(--sn-color-dark);
+                font-weight: 900;
+                font-size: 14vh;
+                text-align: center;
+                line-height: 0.9;
+                padding: 0.5em 0;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 1rem;
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 98%;
+                    height: 100%;
+                    z-index: -1;
+                    overflow: hidden;
+                }
+
+                &::before {
+                    background-color: var(--sn-color-yelow);
+                    /* Начало: polygon(0 15%, 91% 0, 100% 84%, 9% 99%) -> Конец: polygon(0 2%, 100% 21%, 83% 90%, 30% 100%) */
+                    clip-path: polygon(calc(3% + 0% * var(--scroll-progress)) calc(31% - 13% * var(--scroll-progress)), calc(91% + 9% * var(--scroll-progress)) calc(0% + 1% * var(--scroll-progress)), calc(100% - 4% * var(--scroll-progress)) calc(84% + 6% * var(--scroll-progress)), calc(9% + 21% * var(--scroll-progress)) calc(99% + 1% * var(--scroll-progress)));
+                    transform: rotate(calc(-4deg + 3deg * var(--scroll-progress)));
+                    overflow: hidden;
+                }
+
+                &::after {
+                    background-color: var(--sn-color-viol);
+                    /* Начало: polygon(4% 0%, 97% 38%, 95% 100%, 4% 81%) -> Конец: polygon(5% 30%, 97% 0, 100% 68%, 1% 95%) */
+                    clip-path: polygon(calc(10% + 2% * var(--scroll-progress)) calc(0% + 30% * var(--scroll-progress)), 87% calc(38% - 38% * var(--scroll-progress)), calc(95% + 5% * var(--scroll-progress)) calc(100% - 32% * var(--scroll-progress)), calc(4% - 3% * var(--scroll-progress)) calc(81% + 14% * var(--scroll-progress)));
+                    transform: rotate(calc(1deg - 2deg * var(--scroll-progress)));
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .sec--third-nav {
+            display: flex;
+            gap: 0px;
+        }
+
+        .sec--third-nav-left {
+            padding: 14px 10px;
+            border-radius: 10vw 0px 0px 10vw;
+        }
+
+        .sec--third-nav-right {
+            padding: 14px 10px;
+            border-radius: 0px 10vw 10vw 0px;
+        }
+
+        .sec--third-text {
+            padding-top: 1rem;
+            p {
+                font-size: 1rem;
+                padding: 0.3rem 2rem;
+                line-height: 2;
+            }
+        }
     }
 }

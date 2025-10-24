@@ -1,112 +1,108 @@
-
-
-
-.slider--container{
+.slider--container {
     position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 100vh;
     min-height: 800px;
-}
-.slider--text{
-    display: flex;
-    width: 50%;
-    height: 100vh;
-    min-height: 600px;
-    z-index: 1;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-}
-.slider--text  h1{
-    font-family: 'Bebas Neue', sans-serif;
-    text-transform: uppercase;
-    font-size: 7vw;
-    padding-left: clamp(20px, 8vw, 100px);
-    padding-right: clamp(10px, 4vw, 1.8vw);
-    color: var(--sn-color-dark);
-}
-.slider--text span h1{
-    font-family: 'Bebas Neue', sans-serif;
-    text-transform: uppercase;
-    font-size: clamp(4vw, 8vw, 11vw);
-    color: var(--sn-color-dark);
-}
-.slider--text span h1 u{
-    color: var(--sn-color-viol);
-}
-.slider--text span{
-    display: inline-block;
-    width: 90%;
-    min-width: 70%;
-}
-.slider--container video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 0px;
-    margin: 0px;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
 
-/* Стили для анимации текста в шапке */
-.slider--text {
-    /* Родительский блок выступает в роли "маски" */
-    overflow: hidden;
-}
+    .slider--text {
+        display: flex;
+        width: 50%;
+        height: 100vh;
+        min-height: 600px;
+        z-index: 1;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        /* Родительский блок выступает в роли "маски" */
+        overflow: hidden;
 
-.header-text-1,
-.header-text-2 {
-    display: block; /* Чтобы transform работал корректно */
-    -webkit-transform: translateX(-101%);
-    transform: translateX(-101%);
-    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            font-size: 7vw;
+            padding-left: clamp(20px, 8vw, 100px);
+            padding-right: clamp(10px, 4vw, 1.8vw);
+            color: var(--sn-color-dark);
+        }
 
-.header-text-2 {
-    transition-delay: 0.2s; /* Задержка для второго элемента */
-}
+        span {
+            display: inline-block;
+            width: 90%;
+            min-width: 70%;
 
-.slider--text.visible .header-text-1,
-.slider--text.visible .header-text-2 {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-@media (max-width: 768px) {
-    .slider--container{
-       height: 100vh;
-}
-    .slider--text{
-        width: 100vw;
-    }
-     .slider--text span{
-        width: 100vw;
-    }
-     .slider--text h1{
-        font-size: 20vw;
-        color: #000;
-        line-height: 0.8;
-    }
-     .slider--text span h1{
-        width: 100vw;
-        background: none;
-        font-size: 120px;
-        color: #000;
-        line-height: 0.8;
-    }
-     .slider--text span h1 u{
-        color: #865BEF;
-        font-size:28vw;
-        font-family: 'Bebas Neue', sans-serif;
-        text-transform: uppercase;
+            h1 {
+                font-family: 'Bebas Neue', sans-serif;
+                text-transform: uppercase;
+                font-size: clamp(4vw, 8vw, 11vw);
+                color: var(--sn-color-dark);
+
+                u {
+                    color: var(--sn-color-viol);
+                }
+            }
+        }
+
+        /* Стили для анимации текста в шапке */
+        .header-text-1,
+        .header-text-2 {
+            display: block; /* Чтобы transform работал корректно */
+            transform: translateX(-101%);
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .header-text-2 {
+            transition-delay: 0.2s; /* Задержка для второго элемента */
+        }
+
+        &.visible {
+            .header-text-1,
+            .header-text-2 {
+                transform: translateX(0);
+            }
+        }
     }
 
-    
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 0px;
+        margin: 0px;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
 
+    @media (max-width: 768px) {
+        height: 100vh;
+
+        .slider--text {
+            width: 100vw;
+            h1 {
+                font-size: 20vw;
+                color: #000;
+                line-height: 0.8;
+            }
+            span {
+                width: 100vw;
+                h1 {
+                    width: 100vw;
+                    background: none;
+                    font-size: 120px;
+                    color: #000;
+                    line-height: 0.8;
+                    u {
+                        color: #865BEF;
+                        font-size: 28vw;
+                        font-family: 'Bebas Neue', sans-serif;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
 }
