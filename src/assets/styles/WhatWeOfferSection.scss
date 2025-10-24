@@ -2,7 +2,7 @@
 .section--third {
     display: flex;
     width: 100%;
-    background: var(--sn-color-white);
+    background: linear-gradient(to top,#f2f2f2 0% 71%,#fff 65% 100%);
 
     /*----------Section Third Body----------*/
     .sec--third-body {
@@ -101,9 +101,7 @@
 
     @media (max-width: 768px) {
         flex-direction: column;
-        .section--third{
-            background: none;
-        }
+        background: var(--sn-color-white);
 
         .sec--third-image img {
             width: 100vw;
