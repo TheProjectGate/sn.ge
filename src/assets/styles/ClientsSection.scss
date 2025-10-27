@@ -63,12 +63,38 @@
             height: 230px;
 
             h1 {
+                font-variant-numeric: tabular-nums;
+            }
+
+            position: relative;
+            border: 5px solid var(--sn-color-dark-gray); 
+            background: transparent; 
+
+
+            --border-fill-angle: 0deg;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -6px; 
+                left: -6px; 
+                right: -6px; 
+                bottom: -6px; 
+                border-radius: 50%;
+                border: 8px solid var(--sn-color-viol); 
+                mask: conic-gradient(from 0deg, #000 var(--border-fill-angle), transparent var(--border-fill-angle));
+                -webkit-mask: conic-gradient(from 0deg, #000 var(--border-fill-angle), transparent var(--border-fill-angle));
+                z-index: 0; 
+            }
+
+            h1 {
                 font-family: 'Bebas Neue', sans-serif;
                 text-transform: uppercase;
                 text-align: center;
                 color: var(--sn-color-dark);
                 font-weight: 900;
                 font-size: 110px;
+                z-index: 1; 
             }
         }
     }
@@ -112,6 +138,37 @@
         }
         .sec--fifth-lb, .sec--fifth-rb {
             display: none;
+        }
+        .sec--fifth-body{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+
+            .sec--fifth-cont{
+                display: flex;
+                gap: 1rem;
+                flex-direction: row;
+                margin-left: 5%;
+
+                span{
+                    display: flex;
+                    font-size: 2rem;
+                    width: 100px;
+                    height: 100px;
+                    border: 5px solid var(--sn-color-dark-gray);
+                    position: relative;
+                    overflow: visible;
+                    background: transparent;
+                    --border-fill-angle: 0deg; 
+
+                    h1{
+                        font-size: 2.5rem;
+                    }
+                }
+                h3{
+                    font-size: 1.3rem;
+                }
+            }
         }
     }
 }

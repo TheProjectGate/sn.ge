@@ -90,3 +90,69 @@ export function animateButtons(selector1, selector2) {
         clearTimeout(timer2);
     };
 }
+
+/**
+ * Анимирует счетчик чисел от 0 до целевого значения и круговую рамку
+ * при появлении элемента в области видимости. Анимация запускается один раз.
+ * @param {string} selector - CSS-селектор для контейнера счетчика (элемент с рамкой).
+ */
+export function animateCounterAndBorder(selector) {
+  const counters = document.querySelectorAll(selector);
+
+  if (counters.length === 0) {
+    console.warn(`Элементы для анимации счетчика не найдены: ${selector}`); // eslint-disable-line no-console
+    return () => {};
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counterElement = entry.target;
+        const numberElement = counterElement.querySelector('h1');
+
+        if (!numberElement) {
+          console.warn(`Элемент с числом (h1) не найден внутри:`, counterElement); // eslint-disable-line no-console
+          obs.unobserve(counterElement);
+          return;
+        }
+
+        const targetValue = parseInt(numberElement.innerText, 10);
+        const duration = 2000; // 2 секунды
+        let startTime = null;
+
+        // 1. Функция для обновления CSS-переменной для рамки
+        const animateBorder = (progress) => {
+          const angle = progress * 360;
+          counterElement.style.setProperty('--border-fill-angle', `${angle}deg`);
+        };
+
+        // 2. Анимация числа
+        const animateNumber = (timestamp) => {
+          if (!startTime) startTime = timestamp;
+          const progress = timestamp - startTime;
+          const currentProgress = Math.min(progress / duration, 1);
+          const currentValue = Math.floor(currentProgress * targetValue);
+
+          numberElement.innerText = currentValue;
+          
+          // Одновременно анимируем рамку, передавая текущий прогресс
+          animateBorder(currentProgress);
+          
+          if (currentProgress < 1) {
+            requestAnimationFrame(animateNumber);
+          } else {
+            numberElement.innerText = targetValue; // Убедимся, что в конце точное значение
+            counterElement.style.setProperty('--border-fill-angle', '360deg'); // Убедимся, что рамка полностью заполнена
+          }
+        };
+
+        requestAnimationFrame(animateNumber);
+        obs.unobserve(counterElement); // Отписываемся, чтобы анимация не повторялась
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+
+  return () => observer.disconnect();
+}

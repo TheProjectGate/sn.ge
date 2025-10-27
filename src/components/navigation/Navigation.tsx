@@ -1,4 +1,5 @@
 import React, { JSX, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/styles/Navigation.scss';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 
@@ -18,7 +19,7 @@ function Navigation({ isScrolled }: NavigationProps): JSX.Element {
     <nav>
       {/* Мы используем переданный пропс для динамической установки класса */}
       <div className={`nav--container ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="logo"><a href="/" aria-label="SN Georgia Home"></a></div>
+        <div className="logo"><Link to="/" aria-label="SN Georgia Home"></Link></div>
         {/* На десктопе этот блок будет отображаться благодаря display: contents */}
         <div className="desktop-menu-content">
           <ul className="top--menu">
@@ -26,7 +27,7 @@ function Navigation({ isScrolled }: NavigationProps): JSX.Element {
             <li><a href="#media" onClick={toggleMenu}>MEDIA</a></li>
           </ul>
           <div className="contact--button">
-            <a href="#contact" onClick={toggleMenu}>CONTACT US</a>
+            <Link to="/contact" onClick={toggleMenu}>CONTACT US</Link>
           </div>
         </div>
         <BurgerMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />

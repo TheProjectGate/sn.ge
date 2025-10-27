@@ -1,5 +1,6 @@
-import React, { JSX } from 'react';
+import React, { useEffect, JSX } from 'react';
 import '../../assets/styles/ClientsSection.scss';
+import { animateCounterAndBorder } from '../../assets/anima/animation';
 import mcdonaldsLogo from '../../assets/media/img/canvas-clients-logo/McDonald\'s.png';
 import cocacolaLogo from '../../assets/media/img/canvas-clients-logo/coca-cola.png';
 import jyskLogo from '../../assets/media/img/canvas-clients-logo/jysk.png';
@@ -10,6 +11,15 @@ import symetriLogo from '../../assets/media/img/canvas-clients-logo/symetri.png'
 
 
 function ClientsSection(): JSX.Element {
+  useEffect(() => {
+    // Вызываем анимацию для всех элементов с классом .sec--fifth-body span
+    const cleanup = animateCounterAndBorder('.sec--fifth-body span');
+
+    // Очистка при размонтировании компонента
+    return () => {
+      cleanup();
+    };
+  }, []);
   return (
     <section className="section--fifth">
       <span className="sec--fifth-tittle"><h1>OUR CLIENTS</h1></span>

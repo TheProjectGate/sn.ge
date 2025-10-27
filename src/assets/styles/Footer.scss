@@ -44,6 +44,16 @@ footer {
         justify-content: space-between;
         align-items: center;
         color: var(--sn-color-grey);
+
+        a{
+            width: auto;
+            height: auto;
+
+            img{
+                width: 150px;
+                height: 70px;
+            }
+        }
     }
     .social--links {
         gap: 50px;

@@ -9,12 +9,12 @@
     background-color: #000;
     flex-direction: column;
     align-items: center; /* Выравнивание по центру */
-    padding: 0 clamp(1rem, 5vw, 8rem); /* Такие же отступы, как у nav--container */
+    padding: 5vw; /* Такие же отступы, как у nav--container */
     gap: 2rem;
     transition: left 0.3s ease-in-out;
     justify-content: flex-start; /* Контент начинается сверху */
     box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
-    padding-bottom: 4rem;
+    padding-bottom: 15%;
 
     &.open {
         left: 0; /* Показываем меню */

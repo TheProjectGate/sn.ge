@@ -1,4 +1,5 @@
 import React, { JSX } from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/styles/ContactSection.scss';
 import sectionImage4 from '../../assets/media/img/section-image/4.png';
 
@@ -8,7 +9,7 @@ function ContactSection(): JSX.Element {
       <div className="sec--sixth-body">
         <img src={sectionImage4} alt="Planning a creative ad campaign?" />
       </div>
-      <a href="#contact">contact us</a>
+      <Link to="/contact">contact us</Link>
     </section>
   );
 }
