@@ -27,7 +27,7 @@ function Navigation({ isScrolled }: NavigationProps): JSX.Element {
             <li><a href="#media" onClick={toggleMenu}>MEDIA</a></li>
           </ul>
           <div className="contact--button">
-            <Link to="/contact" onClick={toggleMenu}>CONTACT US</Link>
+            <Link to="/contact">CONTACT US</Link>
           </div>
         </div>
         <BurgerMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />

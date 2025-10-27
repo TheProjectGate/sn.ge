@@ -18,7 +18,7 @@ function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps): JSX.Element {
         <li><a href="#media" onClick={toggleMenu}>MEDIA</a></li>
       </ul>
       <div className="contact--button">
-        <Link to="/contact" onClick={toggleMenu}>CONTACT US</Link>
+        <Link to="/contact">CONTACT US</Link>
       </div>
       <div className="social--links">
         <a href="#"><img src={facebookIcon} alt="Facebook" /></a>
