@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/pages/HomePage';
 import ContactPage from './components/pages/ContactPage';
 import MainLayout from './components/layout/MainLayout';

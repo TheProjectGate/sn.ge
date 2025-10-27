@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SN Georgia</title>
 
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+
     <!-- Font Preloading -->
     <link rel="preload" href="/src/assets/media/fonts/montserrat.regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/src/assets/media/fonts/montserrat.bold.ttf" as="font" type="font/ttf" crossorigin>

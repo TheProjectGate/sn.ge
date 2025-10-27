@@ -23,8 +23,8 @@ function Navigation({ isScrolled }: NavigationProps): JSX.Element {
         {/* На десктопе этот блок будет отображаться благодаря display: contents */}
         <div className="desktop-menu-content">
           <ul className="top--menu">
-            <li><a href="#services" onClick={toggleMenu}>SERVICES</a></li>
-            <li><a href="#media" onClick={toggleMenu}>MEDIA</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#media">MEDIA</a></li>
           </ul>
           <div className="contact--button">
             <Link to="/contact">CONTACT US</Link>
