@@ -6,7 +6,7 @@ import MainLayout from './components/layout/MainLayout';
 
 function App(): JSX.Element {
   return (
-    <Router>
+    <Router basename="/sn.ge">
       <Routes>
         <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />
         <Route path="/contact" element={<ContactPage />} />
