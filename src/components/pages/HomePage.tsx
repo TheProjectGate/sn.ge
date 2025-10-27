@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
       <section id="clients">
         <ClientsSection />
       </section>
-      <section id="contact">
+      <section>
         <ContactSection />
       </section>
     </main>
