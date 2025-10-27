@@ -1,5 +1,5 @@
 import React, { useState, useEffect, JSX } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/navigation/Navigation';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -42,7 +42,7 @@ function AppContent(): JSX.Element {
 
 function App(): JSX.Element {
   return (
-    <Router basename="/sn.ge">
+    <Router>
       <AppContent />
     </Router>
   );
