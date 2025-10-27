@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/styles/BurgerMenu.scss';
 import facebookIcon from '../../assets/media/icon/facebook.svg';
 import instagramIcon from '../../assets/media/icon/instagram.svg';
