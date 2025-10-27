@@ -9,7 +9,7 @@ import ContactPage from './components/pages/ContactPage';
 function AppContent(): JSX.Element {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const location = useLocation();
-  const isContactPage = location.pathname === '/contact';
+  const isContactPage = location.hash === '#/contact';
 
   useEffect((): (() => void) => {
     const handleScroll = () => {
