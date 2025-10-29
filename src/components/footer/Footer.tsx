@@ -28,7 +28,8 @@ function Footer(): JSX.Element {
           </span>
           <span>
             <h1>SERVICES</h1>
-            <p>D Block, Stamba Hotel, 14 M.Kostava st.</p>
+            <p>D Block, Stamba Hotel</p>
+            <p>14 M.Kostava st.</p>
             <p>PHONE:  558 23 23 20</p>
             <p>E-MAIL: INFO@SMITH.GE</p>
           </span>

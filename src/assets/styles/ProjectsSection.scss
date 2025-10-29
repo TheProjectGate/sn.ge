@@ -3,17 +3,16 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    line-height: 0.8;
 
     /*----------Section Fourth Tittle----------*/
     .sec--fourth-tittle {
-        background: var(--sn-color-yelow);
+        background: var(--sn-color-dark);
 
         h1 {
             font-family: 'Bebas Neue', sans-serif;
             text-transform: uppercase;
             text-align: center;
-            color: var(--sn-color-dark);
+            color: var(--sn-color-white);
             font-weight: 900;
             font-size: 9vw;
             /* Альтернативный способ убрать отступы */

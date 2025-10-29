@@ -105,6 +105,8 @@
             text-transform: uppercase;
             font-size: clamp(80px, 8vw, 80px);
             line-height: 0.8;
+            text-align: center;
+            margin-bottom: 1rem;
         }
 
         h2 {
@@ -114,6 +116,7 @@
             font-weight: 400;
             font-size: 2vh;
             padding-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         p {
@@ -121,7 +124,7 @@
             color: var(--sn-color-dark);
             font-weight: 400;
             font-size: 1vw;
-            line-height: 1.4;
+            line-height: 1.2;
         }
     }
 
@@ -167,15 +170,17 @@
         .topButton--list {
             font-size: 5.4vw;
 
-            &:not(.tB--active) {
+            & {
                 transform: translateY(-50px);
                 opacity: 0;
                 transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-
-                &.visible {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
+            }
+        }
+        .sec--one-topButton.visible .topButton--list {
+            transform: translateY(0);
+            opacity: 1;
+            &:nth-child(2) {
+                transition-delay: 0.2s;
             }
         }
 

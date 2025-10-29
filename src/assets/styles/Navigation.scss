@@ -1,4 +1,6 @@
-nav {
+@use 'GalleryNavigation'; // Импортируем стили для галереи
+
+nav { // Основные стили навигации
     position: sticky;
     top: 0;
     z-index: 100;
@@ -6,7 +8,7 @@ nav {
     .nav--container {
         position: absolute;
         margin: 0 auto;
-        display: grid;
+        display: grid; /* Всегда используем grid */
         grid-template-columns: auto 1fr auto auto;
         gap: 2rem;
         background: linear-gradient(to right, rgb(0 0 0) 60%, rgba(24, 29, 25, 0.5) 100%);
@@ -14,10 +16,101 @@ nav {
         width: 100%;
         height: clamp(80px, 10vh, 130px);
         padding: 0 clamp(1rem, 5vw, 8rem);
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
 
         &.scrolled {
-            background-color: var(--sn-color-dark);
+            background-color: var(--sn-color-white); /* Фон при скролле */
+        }
+
+        &.with-filters:not(.gallery-page-nav) {
+            grid-template-columns: auto 1fr auto auto;
+            height: auto;
+            min-height: clamp(80px, 10vh, 130px);
+            padding: 1rem clamp(1rem, 5vw, 8rem);
+
+            .sticky-gallery-filters {
+                grid-column: 2 / -1;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    .sticky-gallery-filters {
+        display: none; /* Скрываем по умолчанию */
+        grid-column: 2; /* Размещаем в гибкой колонке */
+
+        button {
+            background: var(--sn-color-dark); /* Цвет кнопок фильтра */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgb(0 0 0);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            border-radius: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+                opacity: 0; /* Эффект наведения */
+                transition: opacity 0.3s ease;
+            }
+
+            .count {
+                margin-left: 0.4rem;
+                font-size: 0.7rem;
+                opacity: 0.8;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 0.1rem 0.4rem;
+                border-radius: 10px;
+                font-weight: 700;
+            }
+
+            &:hover {
+                background: var(--sn-color-yelow); /* Цвет при наведении */
+                border-color: var(--sn-color-dark); /* Цвет рамки при наведении */
+                color: var(--sn-color-dark); /* Цвет текста при наведении */
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            &.active {
+                background: var(--sn-color-yelow); /* Активный цвет */
+                color: var(--sn-color-dark);
+
+                .count {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
+    @keyframes fadeInFilters {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
         }
     }
 
@@ -26,6 +119,7 @@ nav {
         width: 180px;
         height: 60px;
         background-size: contain;
+        flex-shrink: 0;
 
         a {
             display: block;
@@ -38,8 +132,6 @@ nav {
         display: none; /* Скрываем по умолчанию */
         border: none;
         cursor: pointer;
-        background: url(../../assets/media/svg/burger-icon.svg) no-repeat center center;
-        background-size: contain;
         width: clamp(30px, 3vw, 35px);
         height: clamp(25px, 2.5vw, 30px);
 
@@ -52,47 +144,43 @@ nav {
 
     @media (max-width: 768px) {
         .nav--container {
-            padding-right: clamp(4rem, 10vw, 10rem);
-            background: none;
-            grid-template-columns: auto 1fr auto;
+            padding-right: clamp(1rem, 5vw, 2rem);
+            background: #ffffff; /* Всегда белый фон на мобильных устройствах */
+            grid-template-columns: auto 1fr; /* Упрощаем сетку: лого и свободное пространство */
             gap: 1rem;
-
-            &.scrolled {
-                background: #ffffff;
+            height: clamp(70px, 10vh, 90px) !important; /* Немного уменьшим высоту */
+            min-height: auto !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавим тень для отделения от контента */
+            
+            .sticky-gallery-filters {
+                display: none !important;
             }
+        }
+
+        /* Прячем десктопное меню на всех мобильных страницах */
+        .desktop-only {
+            display: none !important;
         }
 
         .logo {
             background: url(../../assets/media/svg/logo-black.svg) no-repeat;
-            width: 180px;
-            height: 60px;
+            width: 150px; /* Уменьшим лого на мобильных */
+            height: 50px;
             background-size: contain;
-            margin: 0px 0px 0px 20px;
+            margin-left: clamp(1rem, 5vw, 2rem); /* Выравниваем отступ с кнопкой бургера */
         }
         .burger--menu {
             position: fixed; /* Фиксируем кнопку на экране */
-            top: 1.5rem; /* Отступ сверху */
-            width: 40px;
-            height: 34px;
+            top: clamp(1.2rem, 3vh, 1.8rem); /* Отступ сверху */
             right: clamp(1rem, 5vw, 8rem); /* Отступ справа, такой же как у контейнера */
             z-index: 101; /* Устанавливаем z-index выше, чем у nav */
             display: block; /* Показываем кнопку на мобильных */
-            background-image: url(../../assets/media/svg/burger-icon.svg); /* Меняем иконку на черную */
+            background: url(../../assets/media/svg/burger-icon.svg) no-repeat center center;
+            background-size: contain;
         }
-        /* Скрываем десктопное меню на мобильных */
-        .desktop-menu-content {
-            display: none;
-        }
-    }
 
-    /* На больших экранах возвращаем стандартное поведение */
-    @media (min-width: 768px) {
-        .desktop-menu-content {
-            display: contents; /* Ведет себя так, будто контейнера нет */
-        }
-        /* Скрываем мобильное меню на десктопе */
-        .mobile-menu-content {
-            display: none;
+        .sticky-gallery-filters {
+            display: none !important;
         }
     }
 
@@ -103,6 +191,7 @@ nav {
         li {
             display: block;
             padding: 0 clamp(1rem, 2vw, 2rem);
+            white-space: nowrap; /* Предотвращаем перенос текста */
             font-size: clamp(16px, 1.5vw, 20px);
         }
     }
@@ -113,5 +202,6 @@ nav {
         padding: clamp(8px, 1vh, 10px) clamp(16px, 2vw, 20px);
         color: var(--sn-color-dark);
         font-size: clamp(1rem, 2vw, 1.4rem);
+        white-space: nowrap; /* Предотвращаем перенос текста */
     }
 }

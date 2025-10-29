@@ -157,16 +157,16 @@ export function useProjectSlider(slides: Slide[]) {
       setDragOffset(0);
     };
 
-    slider.addEventListener('touchstart', handleTouchStart);
-    slider.addEventListener('touchmove', handleTouchMove);
-    slider.addEventListener('touchend', handleTouchEnd);
-    slider.addEventListener('touchcancel', handleTouchEnd); // На случай, если касание прервется
+    slider.addEventListener('touchstart', handleTouchStart, { passive: false });
+    slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+    slider.addEventListener('touchend', handleTouchEnd, { passive: false });
+    slider.addEventListener('touchcancel', handleTouchEnd, { passive: false }); // На случай, если касание прервется
 
     return () => {
-      slider.removeEventListener('touchstart', handleTouchStart);
-      slider.removeEventListener('touchmove', handleTouchMove);
-      slider.removeEventListener('touchend', handleTouchEnd);
-      slider.removeEventListener('touchcancel', handleTouchEnd);
+      slider.removeEventListener('touchstart', handleTouchStart, { passive: false } as EventListenerOptions);
+      slider.removeEventListener('touchmove', handleTouchMove, { passive: false } as EventListenerOptions);
+      slider.removeEventListener('touchend', handleTouchEnd, { passive: false } as EventListenerOptions);
+      slider.removeEventListener('touchcancel', handleTouchEnd, { passive: false } as EventListenerOptions);
     };
   }, [handleInteraction]);
 

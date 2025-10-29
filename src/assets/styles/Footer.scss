@@ -19,6 +19,8 @@ footer {
         line-height: 2;
 
         span {
+            display: flex;
+            flex-direction: column;
             a {
                 font-family: 'Montserrat', sans-serif;
                 text-transform: uppercase;
@@ -65,12 +67,19 @@ footer {
             flex-direction: column;
             align-items: center;
             gap: 2rem;
+
+            span{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
         .footer--bottom {
             font-size: 10px;
+            justify-content: center;
             a img {
-                width: 150px;
-                height: 70px;
+                display: none;
+                
             }
         }
     }

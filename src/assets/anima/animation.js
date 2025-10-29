@@ -156,3 +156,33 @@ export function animateCounterAndBorder(selector) {
 
   return () => observer.disconnect();
 }
+
+/**
+ * Добавляет класс 'visible' к элементу, когда он появляется в области видимости, и делает это только один раз.
+ * @param {string} selector - CSS-селектор элемента, который нужно анимировать.
+ * @returns {Function} - Функция для очистки слушателя событий.
+ */
+export function animateOnScrollOnce(selector) {
+  const targetElement = document.querySelector(selector);
+
+  if (!targetElement) {
+    console.warn(`Элемент для одноразовой анимации не найден: ${selector}`); // eslint-disable-line no-console
+    return () => {};
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target); // Отписываемся после первого срабатывания
+      }
+    });
+  }, {
+    threshold: 0.3 // Анимация начнется, когда 30% элемента будет видно
+  });
+
+  observer.observe(targetElement);
+
+  // Возвращаем функцию, которая удалит слушатель событий
+  return () => observer.disconnect();
+}

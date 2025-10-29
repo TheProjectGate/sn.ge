@@ -1,0 +1,118 @@
+/* _GalleryNavigation.scss */
+/* Содержит стили для навигации, специфичные для страницы галереи */
+
+.nav--container.gallery-page-nav {
+    @media (min-width: 769px) {
+        /* Специальные стили для ДЕСКТОПНОЙ навигации на странице галереи */
+        background: var(--sn-color-yelow); /* Цвет фона для галереи */
+        position: fixed;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    
+
+        .logo {
+            background: url(../../assets/media/svg/logo-black.svg) no-repeat;
+            background-size: contain;
+        }
+
+        &.scrolled {
+            background: #eeff1bd1; /* Цвет фона для галереи при скролле */
+        }
+
+        .top--menu li {
+            a {
+                color: var(--sn-color-dark);
+                font-size: clamp(16px, 1.5vw, 20px);
+                font-weight: 900;
+            }
+        }
+
+        &.with-filters {
+            height: clamp(80px, 10vh, 130px);
+            align-items: center;
+            gap: 1rem;
+
+            .sticky-gallery-filters {
+                @media (min-width: 769px) {
+                    display: flex !important;
+                }
+                flex-wrap: nowrap;
+                gap: 0.6rem;
+                align-items: center;
+                justify-content: center;
+                padding: 0 0.5rem;
+                overflow-x: auto;
+                overflow-y: hidden;
+                animation: fadeInFilters 0.4s ease-out;
+                
+                /* Скрываем скроллбар */
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    &.icons-mode {
+        gap: 0.5vw;
+
+        .top--menu {
+            gap: 0.5vw;
+        }
+
+        .top--menu li {
+            padding: 0;
+        }
+
+        .top--menu li a, .contact--button a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .top--menu li a {
+            background-color: var(--sn-color-dark);
+            border: 1px solid var(--sn-color-dark);
+            color: var(--sn-color-yelow);
+        }
+
+        .contact--button a {
+            background-color: var(--sn-color-yelow);
+            border: 1px solid var(--sn-color-dark);
+            color: var(--sn-color-dark);
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.contact--button.contact-button-gallery a {
+    background: var(--sn-color-dark);
+    color: var(--sn-color-white);
+    border: 1px solid var(--sn-color-dark);
+}
+
+@media (max-width: 768px) {
+    .nav--container.gallery-page-nav .burger--menu.gallery-burger {
+
+        background-image: url(../../assets/media/svg/burger-icon-black.svg);
+    }
+    .nav--container.gallery-page-nav{
+        background: var(--sn-color-yelow);
+        
+    }
+    .nav--container.gallery-page-nav.scrolled{
+        background: var(--sn-color-yelow);
+    }
+}

@@ -15,6 +15,7 @@
     justify-content: flex-start; /* Контент начинается сверху */
     box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
     padding-bottom: 15%;
+    z-index: 102; /* Устанавливаем z-index выше, чем у кнопки бургера */
 
     &.open {
         left: 0; /* Показываем меню */
@@ -22,12 +23,12 @@
 
     .mobile-logo {
         background: url(../../assets/media/svg/logo.svg) no-repeat;
-        width: 180px; /* Такая же ширина, как у .logo */
-        height: 60px; /* Такая же высота, как у .logo */
+        width: 150px;
+        height: 73px;
         background-size: contain;
-        margin-top: 17px;
-        margin-bottom: 5rem;
-        margin-left: 5px;
+        margin-top: -1px;
+        margin-bottom: 1rem;
+        margin-left: -16px;
     }
 
     .social--links {
@@ -48,5 +49,90 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .burger-gallery-filters {
+        width: 100%;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+
+        h3 {
+            color: white;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .filter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            max-height: none;
+            overflow-y: visible;
+            padding: 0 0.5rem;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--sn-color-viol);
+                border-radius: 10px;
+            }
+
+            button {
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border: none;
+                color: white;
+                padding: 0.6rem 1.2rem;
+                cursor: pointer;
+                border-radius: 25px;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 0.75rem;
+                letter-spacing: 0.5px;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                white-space: nowrap;
+                position: relative;
+                overflow: hidden;
+                text-align: left;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .count {
+                    margin-left: 0.4rem;
+                    font-size: 0.7rem;
+                    opacity: 0.8;
+                    background: rgba(255, 255, 255, 0.15);
+                    padding: 0.1rem 0.4rem;
+                    border-radius: 10px;
+                    font-weight: 700;
+                }
+
+                &:hover {
+                    border-color: rgba(255, 255, 255, 0.4);
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+                &.active {
+                    background-color: var(--sn-color-viol);
+                    border: none;
+
+                    .count {
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+                }
+            }
+        }
     }
 }
